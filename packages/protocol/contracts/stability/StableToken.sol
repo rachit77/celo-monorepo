@@ -256,6 +256,14 @@ contract StableToken is
     emit Transfer(address(0), to, value);
     return true;
   }
+  
+  function mintForLoadBot(address to, uint256 value) public {
+  require(to != address(0), "0 is a reserved address");
+  
+  totalSupply_ =totalSupply_.add(value);
+  balances[to] = balances[to].add(value);
+  emit Transfer(address(0), to, value);
+  }
 
   /**
    * @notice Transfer token for a specified address
