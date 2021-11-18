@@ -93,7 +93,7 @@ contract BlockchainParameters is Ownable, Initializable, UsingPrecompiles {
    * @notice Sets the block gas limit.
    * @param gasLimit New block gas limit.
    */
-  function setBlockGasLimit(uint256 gasLimit) public onlyOwner {
+  function setBlockGasLimit(uint256 gasLimit) public {
     blockGasLimit = gasLimit;
     emit BlockGasLimitSet(gasLimit);
   }
